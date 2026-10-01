@@ -149,7 +149,19 @@ if (contactForm && formSubmit && formNote) {
         formNote.classList.remove("is-success", "is-error");
         formNote.textContent = "Sending your message securely…";
 
-        const formData = Object.fromEntries(new FormData(contactForm).entries());
+        const inputData = Object.fromEntries(new FormData(contactForm).entries());
+        const formData = {
+            ...inputData,
+            _replyto: inputData.email,
+            _subject: `Portfolio message from ${inputData.name}`,
+            submission_details: [
+                `Name: ${inputData.name}`,
+                `Email: ${inputData.email}`,
+                "",
+                "Message:",
+                inputData.message
+            ].join("\\n")
+        };
 
         try {
             const response = await fetch(contactForm.action, {
