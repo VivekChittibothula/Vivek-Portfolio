@@ -3,7 +3,7 @@
 > **Full-stack developer · CSE Data Science**<br>
 > Building useful software with clean interfaces, reliable systems, and practical AI.
 
-[![Portfolio URL](https://img.shields.io/badge/Portfolio-Visit%20Site-111111?style=for-the-badge)](https://vivekchittibothula.github.io/Vivek-Portfolio/)
+[![Portfolio URL](https://img.shields.io/badge/Portfolio-Visit%20Site-111111?style=for-the-badge)](https://vivek-ch-portfolio.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-VivekChittibothula-111111?style=for-the-badge&logo=github)](https://github.com/VivekChittibothula)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Vivek%20Chittibothula-111111?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/vivekchittibothula)
 
@@ -32,9 +32,9 @@ The visual direction follows a minimal product-oriented approach: strong typogra
 ## Live
 
 🌐 **Portfolio:**<br>
-https://vivekchittibothula.github.io/Vivek-Portfolio/
+https://vivek-ch-portfolio.vercel.app/
 
-The repository is prepared for static deployment through **GitHub Pages**. Once Pages is enabled for the `main` branch, the URL above becomes the public portfolio.
+The portfolio is deployed as a static site on **Vercel**.
 
 ---
 
@@ -162,7 +162,7 @@ https://github.com/VivekChittibothula
 | Styling | CSS3 |
 | Interaction | Vanilla JavaScript |
 | Forms | FormSubmit |
-| Hosting | GitHub Pages |
+| Hosting | Vercel |
 | Version Control | Git / GitHub |
 
 ### Why no framework?
@@ -242,19 +242,16 @@ You can technically open `index.html` directly, but using a local server provide
 
 ## Deployment
 
-The portfolio is structured as a static GitHub Pages site.
+The live portfolio is deployed on Vercel from this GitHub repository.
 
 To deploy your own version:
 
-1. Fork or clone the repository.
-2. Push the project to GitHub.
-3. Open **Settings → Pages**.
-4. Select **Deploy from a branch**.
-5. Select the `main` branch.
-6. Select `/ (root)` as the directory.
-7. Save.
+1. Import the repository into Vercel.
+2. Keep the project as a static site with no build command.
+3. Set the output directory to the project root.
+4. Deploy.
 
-GitHub Pages will then serve the static site.
+Vercel will provide a public `vercel.app` URL and redeploy future pushes automatically.
 
 ---
 
@@ -325,7 +322,7 @@ Interested in:
 ## Connect
 
 <p align="center">
-  <a href="https://vivekchittibothula.github.io/Vivek-Portfolio/">
+  <a href="https://vivek-ch-portfolio.vercel.app/">
     <strong>Portfolio</strong>
   </a>
   ·
