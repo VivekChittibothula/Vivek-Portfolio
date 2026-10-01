@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Vivek Chittibothula</title>
+  <desc id="desc">A luminous lime V on a dark rounded square.</desc>
+  <defs>
+    <linearGradient id="bg" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20251a"/>
+      <stop offset="1" stop-color="#10110e"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="16" y1="14" x2="46" y2="51" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e4ff9c"/>
+      <stop offset=".45" stop-color="#c8ff62"/>
+      <stop offset="1" stop-color="#75bc1f"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="none" stroke="#c8ff62" stroke-opacity=".24"/>
+  <circle cx="50" cy="13" r="2" fill="#c8ff62" opacity=".9"/>
+  <path d="M15 15h10l7 24 7-24h10L37 50H27L15 15Z" fill="#c8ff62" opacity=".22" filter="url(#glow)"/>
+  <path d="M15 15h10l7 24 7-24h10L37 50H27L15 15Z" fill="url(#mark)"/>
+  <path d="M19 18h4l9 28 9-28h4L33 45h-2L19 18Z" fill="#f2ffd0" opacity=".28"/>
+</svg>
