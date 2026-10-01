@@ -9,6 +9,9 @@ const themeLabel = $(".theme-label");
 const themeIcon = $(".theme-icon");
 const soundToggle = $("#sound-toggle");
 const soundLabel = $(".sound-label");
+const contactForm = $(".contact-form");
+const formSubmit = $(".form-submit", contactForm);
+const formNote = $(".form-note", contactForm);
 
 const storage = {
     get(key) {
@@ -133,3 +136,44 @@ document.addEventListener("click", (event) => {
     if (!target || target.id === "sound-toggle") return;
     playEffect(target.matches('a[href^="#"]') ? "transition" : "click", 0.2);
 });
+
+if (contactForm && formSubmit && formNote) {
+    const defaultFormNote = formNote.textContent;
+    const defaultButtonLabel = formSubmit.innerHTML;
+
+    contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        formSubmit.disabled = true;
+        formSubmit.setAttribute("aria-busy", "true");
+        formSubmit.innerHTML = "Sending <span aria-hidden=\"true\">…</span>";
+        formNote.classList.remove("is-success", "is-error");
+        formNote.textContent = "Sending your message securely…";
+
+        const formData = Object.fromEntries(new FormData(contactForm).entries());
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+            const result = await response.json().catch(() => ({}));
+            if (!response.ok || result.success === false || result.success === "false") throw new Error("Submission failed");
+
+            contactForm.reset();
+            formNote.classList.add("is-success");
+            formNote.textContent = "Your message was sent to Vivek successfully. Please wait for the response.";
+        } catch {
+            formNote.classList.add("is-error");
+            formNote.textContent = "I couldn’t send your message right now. Please try again or email 248R5A6706@gmail.com directly.";
+        } finally {
+            formSubmit.disabled = false;
+            formSubmit.removeAttribute("aria-busy");
+            formSubmit.innerHTML = defaultButtonLabel;
+            if (!formNote.textContent) formNote.textContent = defaultFormNote;
+        }
+    });
+}
